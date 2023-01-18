@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC 
 import time
+import secret
 driver = webdriver.Chrome()
 
 
@@ -11,10 +12,10 @@ driver = webdriver.Chrome()
 url = 'https://www.letskorail.com/korail/com/login.do'
 driver.get(url)
 #id 입력
-driver.find_element(By.ID, "txtMember").send_keys("")
+driver.find_element(By.ID, "txtMember").send_keys(secret.id)
 time.sleep(0.5)
 #password 입력
-driver.find_element(By.ID, "txtPwd").send_keys("")
+driver.find_element(By.ID, "txtPwd").send_keys(secret.password)
 time.sleep(0.5)
 driver.find_element(By.CLASS_NAME, "btn_login").click()
 time.sleep(2)
